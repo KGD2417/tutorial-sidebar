@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import Icon from "../Images/Icon.svg";
-import Profile from "../Images/profile.png";
 import Dashboard from "../Images/dashboard.svg";
-import Transactions from "../Images/transactions.svg";
+import Create from "../Images/create.svg";
+import alltests from "../Images/transactions.svg";
 import Performance from "../Images/performance.svg";
-import News from "../Images/news.svg";
-import Settings from "../Images/settings.svg";
-import Support from "../Images/support.svg";
+import Profile from "../Images/profile.svg";
 import { useLocation } from "react-router-dom";
+import { HiOutlinePlus } from "react-icons/hi";
 
 const Sidebar = () => {
     const location = useLocation();
@@ -28,7 +27,7 @@ const Sidebar = () => {
                 }
             >
                 <img src={Icon} alt="icon" className="logo" />
-                <h2 className="title">evergreen. </h2>
+                <h2 className="title">EduQuest. </h2>
             </div>
             <div
                 className={
@@ -48,19 +47,6 @@ const Sidebar = () => {
             <div
                 className={
                     closeMenu === false
-                        ? "profileContainer"
-                        : "profileContainer active"
-                }
-            >
-                <img src={Profile} alt="profile" className="profile" />
-                <div className="profileContents">
-                    <p className="name">Hello, John👋</p>
-                    <p>johnsmith@gmail.com</p>
-                </div>
-            </div>
-            <div
-                className={
-                    closeMenu === false
                         ? "contentsContainer"
                         : "contentsContainer active"
                 }
@@ -72,13 +58,21 @@ const Sidebar = () => {
                     </li>
                     <li
                         className={
-                            location.pathname === "/transactions"
+                            location.pathname === "/createtests"
                                 ? "active"
                                 : ""
                         }
                     >
-                        <img src={Transactions} alt="transactions" />
-                        <a href="/transactions">transactions</a>
+                        <img src={Create} alt="createtests" />
+                        <a href="/createtests">Create Test</a>
+                    </li>
+                    <li
+                        className={
+                            location.pathname === "/alltests" ? "active" : ""
+                        }
+                    >
+                        <img src={alltests} alt="All Tests" />
+                        <a href="/alltests">All Tests</a>
                     </li>
                     <li
                         className={
@@ -93,24 +87,8 @@ const Sidebar = () => {
                             location.pathname === "/news" ? "active" : ""
                         }
                     >
-                        <img src={News} alt="News" />
-                        <a href="/news">news</a>
-                    </li>
-                    <li
-                        className={
-                            location.pathname === "/settings" ? "active" : ""
-                        }
-                    >
-                        <img src={Settings} alt="Settings" />
-                        <a href="/settings">settings</a>
-                    </li>
-                    <li
-                        className={
-                            location.pathname === "/support" ? "active" : ""
-                        }
-                    >
-                        <img src={Support} alt="Support" />
-                        <a href="/support">support</a>
+                        <img src={Profile} alt="Profile" />
+                        <a href="/profile">Profile</a>
                     </li>
                 </ul>
             </div>
